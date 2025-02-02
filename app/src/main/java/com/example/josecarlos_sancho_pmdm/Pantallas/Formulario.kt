@@ -250,7 +250,7 @@ fun Formulario(viewModel: AlimentosViewModel, context: Context, lista: SnapshotS
 
                 Row(Modifier.fillMaxWidth().weight(0.1f)) {
                     var expanded by remember { mutableStateOf(false) }
-
+                    //comtentarios
                     Column {
                         Button(
                             onClick = {
