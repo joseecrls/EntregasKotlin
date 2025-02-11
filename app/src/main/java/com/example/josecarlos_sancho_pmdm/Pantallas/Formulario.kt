@@ -124,7 +124,7 @@ fun Formulario(viewModel: AlimentosViewModel, context: Context, lista: SnapshotS
                                 var proteinasIng = remember { mutableStateOf("") }
                                 var carbohidratosIng = remember { mutableStateOf("") }
                                 var lipidosIng = remember { mutableStateOf("") }
-                                var alimentoIng by remember { mutableStateOf(Ingrediente(ComponenteDieta())) }
+                                var alimentoIng by remember { mutableStateOf(Ingrediente(cd=ComponenteDieta())) }
 
 
                                 Row(
@@ -196,14 +196,14 @@ fun Formulario(viewModel: AlimentosViewModel, context: Context, lista: SnapshotS
                                                 onClick = {
 
                                                     val i = Ingrediente(
-                                                        ComponenteDieta(
-                                                            nombreIng.value,
-                                                            TipoComponente.SIMPLE,
-                                                            proteinasIng.value.toDoubleOrNull()!!,
-                                                            carbohidratosIng.value.toDoubleOrNull()!!,
-                                                            lipidosIng.value.toDoubleOrNull()!!
+                                                        cd=ComponenteDieta(
+                                                            nombre=nombreIng.value,
+                                                            tipo = TipoComponente.SIMPLE,
+                                                            grPro_ini = proteinasIng.value.toDoubleOrNull()!!,
+                                                            grHC_ini =  carbohidratosIng.value.toDoubleOrNull()!!,
+                                                             grLip_ini = lipidosIng.value.toDoubleOrNull()!!
                                                         ),
-                                                        cantidadIng.value.toDoubleOrNull()!!
+                                                        cantidad = cantidadIng.value.toDoubleOrNull()!!
                                                     )
                                                     ingredientesList.add(i)
 

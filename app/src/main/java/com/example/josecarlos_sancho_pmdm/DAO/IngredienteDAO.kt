@@ -15,7 +15,7 @@ object DaoIngrediente: IngredienteDAOI {
     ): Boolean {
         val lista=  BD_Fichero.leer(context)
         if(lista.contains(padre)){
-            val ingrediente=Ingrediente(ing, cantidad)
+            val ingrediente=Ingrediente(cd=ing, cantidad=cantidad)
             val inx=lista.indexOf(padre)
             val comp=lista.get(inx)
 
